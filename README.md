@@ -1,63 +1,68 @@
-# 🌐 Aadarsh Portfolio Website  
+# Mairevh Exaucey — AI Engineer Portfolio
 
-A clean, modern, and fully responsive **Portfolio Website** built using **React.js, Tailwind CSS, Framer Motion, and Lucide React** — complete with dark/light mode, animations, and smooth page transitions.
-
----
-
-## 🚀 Live Demo  
-🔗 [View Portfolio](https://aadarsh-portfolio-delta.vercel.app)
+A clean, modern, and fully responsive **Portfolio Website** built with **React 19, Tailwind CSS 4, Framer Motion, and Lucide React** — featuring dark/light mode, animated circular skill indicators, a contact form, and smooth page transitions.
 
 ---
 
-## 🧩 Tech Stack  
-- ⚛️ React.js  
-- 💨 Tailwind CSS  
-- 🎞️ Framer Motion  
-- 🔆 Lucide React  
-- 🧠 React Icons  
-- 🌐 Vercel (Deployment)
+## Tech Stack
+- React 19
+- Tailwind CSS 4
+- Framer Motion
+- Lucide React
+- React Icons
+- React Router
+- Vite
 
 ---
 
-## 🌈 Features  
-✅ Fully responsive design  
-✅ Smooth animations and transitions  
-✅ Dark & Light mode support  
-✅ Reusable components (Navbar, Footer)  
-✅ Project showcase with live and GitHub links  
-✅ Theme toggle using Context API  
-✅ Organized routing with React Router  
+## Features
+- Fully responsive design (mobile, tablet, desktop)
+- Dark & Light mode toggle with Context API
+- Animated circular SVG skill indicators with project references
+- Color-coded tech stack by category (Core, ML/AI, Data, Infrastructure)
+- Contact form with dedicated message zone
+- Social links: GitHub, LinkedIn, WhatsApp
+- Smooth animations and page transitions
+- Organized routing with React Router
 
 ---
 
-## 🧱 Pages Overview  
+## Pages Overview
 
 | Page | Description |
-|------|--------------|
-| 🏠 **Home** | Introduction section with profile image |
-| ⚙️ **Skills** | Lists all skills with animated percentage bars |
-| 💼 **Work** | Displays all projects with links to live sites & GitHub repos |
-| 👨‍💻 **About** | Aadarsh’s journey and background |
-| 📬 **Connect** | Contact info + YouTube channel link |
+|------|-------------|
+| **Home** | Introduction with profile photo and AI Engineer role cards |
+| **Skills** | Circular progress indicators for core expertise, interactive detail cards with project links, color-coded tech stack |
+| **Work** | 6 AI & Data Engineering projects (NLP, Computer Vision, Anomaly Detection, GovTech, Voice Assistant, Proactive Reminders) |
+| **About** | Professional journey, key metrics (98% detection precision, 300k+ transactions), and background |
+| **Connect** | Contact form (name, email, subject, message) + contact info + social links |
 
 ---
 
-## 🎨 Color Palette  
+## Color Palette
 
-### 🌞 Light Mode  
+### Light Mode
 | Element | Color | Description |
-|----------|--------|-------------|
-| Navbar background | `#FFFFFF` | Clean white background |
+|---------|-------|-------------|
+| Background | `#FFFFFF` | Clean white |
 | Border | `#DBEAFE` | Soft light-blue border |
-| Text (default) | `#374151` | Neutral text |
-| Active Link | `#2563EB` | Vibrant blue highlight |
+| Text | `#374151` | Neutral gray |
+| Active/Accent | `#2563EB` | Vibrant blue |
 
-### 🌙 Dark Mode  
+### Dark Mode
 | Element | Color | Description |
-|----------|--------|-------------|
-| Navbar background | `#000000` | Pure black |
-| Text (default) | `#D1D5DB` | Soft gray |
-| Active Link | `#60A5FA` | Highlighted blue |
+|---------|-------|-------------|
+| Background | `#000000` | Pure black |
+| Text | `#D1D5DB` | Soft gray |
+| Active/Accent | `#60A5FA` | Highlighted blue |
 | Border | `#1E3A8A` | Deep translucent blue |
 
 ---
+
+## Author
+
+**Mairevh Exaucey KIBAMBA MFOUTOU**
+AI Engineer | Lome, Togo
+
+- [GitHub](https://github.com/bit-collab)
+- [LinkedIn](https://www.linkedin.com/in/exaucey-kibamba-27261025b/)
