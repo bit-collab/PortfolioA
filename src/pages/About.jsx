@@ -1,10 +1,12 @@
 import React from "react";
 import { useTheme } from "../context/Theme/ThemeContext";
+import { Link } from "react-router-dom";
 import {
-  FaCode,
+  FaBrain,
   FaGraduationCap,
-  FaYoutube,
   FaArrowRight,
+  FaUsers,
+  FaPlane,
 } from "react-icons/fa";
 
 const About = () => {
@@ -21,42 +23,42 @@ const About = () => {
   const journey = [
     {
       icon: <FaGraduationCap className="text-2xl" />,
-      title: "Academic Foundation",
+      title: "Master's in AI & Big Data",
       description:
-        "2nd Year B.Tech in Computer Engineering, building strong fundamentals in DSA and computer science principles.",
+        "Graduated from Ecole Polytechnique de Lome in partnership with UTBM (France). Specialized in complex architectures and large-scale data processing.",
     },
     {
-      icon: <FaCode className="text-2xl" />,
-      title: "Development Mastery",
+      icon: <FaPlane className="text-2xl" />,
+      title: "Aeronautical Background",
       description:
-        "Progressed from HTML/CSS basics through JavaScript to React frontend development, then expanded to full-stack MERN development.",
+        "Former air traffic control technician (EAMAC). An experience that shaped my rigor and critical systems management before transitioning to AI.",
     },
     {
-      icon: <FaArrowRight className="text-2xl" />,
-      title: "Real-World Projects",
+      icon: <FaBrain className="text-2xl" />,
+      title: "AI & NLP Expertise",
       description:
-        "Developed and deployed 10+ production-ready applications spanning note-taking, URL shortening, AI tools, expense tracking, and more.",
+        "Designing hybrid NLTK + LLM systems, financial anomaly detection (98% precision), and automated document processing (YOLO/OCR).",
     },
     {
-      icon: <FaYoutube className="text-2xl" />,
-      title: "Content Creator",
+      icon: <FaUsers className="text-2xl" />,
+      title: "Social Engagement",
       description:
-        "Recently began content creation journey on YouTube @SkillCoder-By_Aadarsh, sharing knowledge and insights with the developer community.",
+        "Amnesty International member and trainer at Bloc des Innovateurs de Lome, committed to ethical and inclusive technology.",
     },
   ];
 
   const skills = [
     {
-      category: "Frontend",
-      items: ["React", "JavaScript", "HTML/CSS", "Tailwind"],
+      category: "AI & Machine Learning",
+      items: ["NLP (NLTK, Groq, Llama)", "Computer Vision (YOLO, OCR)", "Machine Learning", "Predictive Analysis"],
     },
     {
-      category: "Backend",
-      items: ["Node.js", "Express", "MongoDB", "REST APIs"],
+      category: "Data Engineering",
+      items: ["Prefect (ETL)", "PySpark", "PostgreSQL", "AWS Cloud"],
     },
     {
-      category: "Tools & Platforms",
-      items: ["Git", "Vercel", "Render", "Firebase"],
+      category: "Backend & API",
+      items: ["FastAPI", "WebSockets", "Python", "JWT Auth"],
     },
   ];
 
@@ -84,8 +86,7 @@ const About = () => {
           </h1>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full mb-6"></div>
           <p className={`text-lg md:text-xl max-w-2xl mx-auto ${textPrimary}`}>
-            A passionate developer and learner on a continuous journey of growth
-            and innovation
+            AI Engineer combining deep technical expertise with a product-oriented mindset.
           </p>
         </div>
 
@@ -93,25 +94,17 @@ const About = () => {
           className={`rounded-2xl border ${borderColor} ${cardBg} p-8 md:p-10 mb-16 backdrop-blur-sm shadow-xl`}
         >
           <h2 className={`text-3xl font-bold mb-6 ${headingColor}`}>
-            Welcome to My Journey
+            My Professional Journey
           </h2>
           <p className={`text-lg leading-relaxed ${textPrimary} mb-4`}>
-            I'm{" "}
+            I am{" "}
             <span className="font-semibold text-blue-500">
-              Aadarsh Shrivastav
+              Mairevh Exaucey KIBAMBA MFOUTOU
             </span>
-            , a 2nd-year B.Tech student in Computer Engineering with a passion
-            for building scalable and user-centric applications. My development
-            journey began during my first year, starting with fundamental Data
-            Structures and Algorithms, which laid a strong foundation for my
-            technical growth.
+            , an AI Engineer based in Togo. My hybrid profile allows me to navigate from AI engineering to complex systems architecture, with a particular focus on inclusive finance and digital transformation in West Africa.
           </p>
           <p className={`text-lg leading-relaxed ${textPrimary}`}>
-            Over time, I transitioned from theoretical concepts to practical
-            development, mastering web technologies from front-end basics to
-            full-stack application development. Today, I combine academic
-            excellence with hands-on experience, continuously pushing the
-            boundaries of what I can create.
+            Today, I develop intelligent solutions for fintechs and microfinance institutions, optimizing everything from customer support via WebSockets to fraud detection with a documented 98% precision.
           </p>
         </div>
 
@@ -119,9 +112,9 @@ const About = () => {
           <h2
             className={`text-3xl font-bold text-center mb-12 ${headingColor}`}
           >
-            My Development{" "}
+            My{" "}
             <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
-              Path
+              Journey
             </span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -183,63 +176,61 @@ const About = () => {
           className={`rounded-2xl border ${borderColor} ${cardBg} p-8 md:p-10 mb-12 backdrop-blur-sm shadow-xl`}
         >
           <h2 className={`text-3xl font-bold mb-8 ${headingColor}`}>
-            Highlights &{" "}
+            Key Metrics &{" "}
             <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
-              Achievements
+              Impact
             </span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex gap-4">
               <div className="text-3xl font-bold text-blue-500 min-w-fit">
-                10+
+                98%
               </div>
               <div>
                 <h3 className={`font-bold ${headingColor} mb-1`}>
-                  Production Projects
+                  Detection Precision
                 </h3>
                 <p className={textPrimary}>
-                  Deployed and live applications serving real-world use cases
+                  Financial anomaly detection models optimized to minimize false positives.
                 </p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="text-3xl font-bold text-blue-500 min-w-fit">
-                $
+                300k+
               </div>
               <div>
                 <h3 className={`font-bold ${headingColor} mb-1`}>
-                  Monetized Work
+                  Transactions Analyzed
                 </h3>
                 <p className={textPrimary}>
-                  Generated revenue from client projects and commercial
-                  applications
+                  Large-scale data processing via PySpark and distributed architectures.
                 </p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="text-3xl font-bold text-blue-500 min-w-fit">
-                📺
+                0
               </div>
               <div>
                 <h3 className={`font-bold ${headingColor} mb-1`}>
-                  Content Creator
+                  LLM Tokens (FAQ)
                 </h3>
                 <p className={textPrimary}>
-                  YouTube channel @SkillCoder-By_Aadarsh sharing development
-                  insights
+                  Drastic cost optimization through hybrid NLP architectures.
                 </p>
               </div>
             </div>
             <div className="flex gap-4">
               <div className="text-3xl font-bold text-blue-500 min-w-fit">
-                🎯
+
               </div>
               <div>
                 <h3 className={`font-bold ${headingColor} mb-1`}>
-                  Full-Stack Expertise
+                  Financial Inclusion
                 </h3>
                 <p className={textPrimary}>
-                  Complete MERN stack mastery with deployment experience
+                  Solutions dedicated to women's empowerment and informal sector digitalization.
                 </p>
               </div>
             </div>
@@ -248,31 +239,29 @@ const About = () => {
 
         <div className="text-center">
           <p className={`text-lg mb-8 ${textPrimary}`}>
-            Interested in collaborating or learning more about my work?
+            Looking to collaborate on an AI or Data Engineering project?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/work"
+            <Link
+              to="/work"
               className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 ${
                 isDark
                   ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-600/50"
                   : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-600/30"
               }`}
             >
-              View My Projects <FaArrowRight className="text-sm" />
-            </a>
-            <a
-              href="https://www.youtube.com/@SkillCoder-By_Aadarsh"
-              target="_blank"
-              rel="noopener noreferrer"
+              Explore My Work <FaArrowRight className="text-sm" />
+            </Link>
+            <Link
+              to="/connect"
               className={`px-8 py-3 rounded-lg font-semibold border-2 transition-all duration-300 inline-flex items-center justify-center gap-2 ${
                 isDark
                   ? "border-blue-400 text-blue-400 hover:bg-blue-950/50"
                   : "border-blue-600 text-blue-600 hover:bg-blue-50"
               }`}
             >
-              Watch My Videos <FaYoutube className="text-sm" />
-            </a>
+              Get in Touch
+            </Link>
           </div>
         </div>
       </div>

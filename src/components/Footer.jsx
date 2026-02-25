@@ -1,6 +1,5 @@
 import React from "react";
 import { useTheme } from "../context/Theme/ThemeContext";
-import { Youtube } from "lucide-react";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -18,29 +17,13 @@ const Footer = () => {
           <h3
             className={`text-lg font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent`}
           >
-            Aadarsh Shrivastav
+            Mairevh Exaucey KIBAMBA
           </h3>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="https://www.youtube.com/@SkillCoder-By_Aadarsh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${
-                isDark
-                  ? "bg-red-600 hover:bg-red-700 text-white"
-                  : "bg-red-600 hover:bg-red-700 text-white"
-              } p-2 rounded-full transition-colors duration-300 flex items-center justify-center`}
-              title="SkillCoders - By Aadarsh Shrivastav"
-            >
-              <Youtube size={20} />
-            </a>
-          </div>
 
           <p
             className={`${isDark ? "text-gray-500" : "text-gray-600"} text-sm`}
           >
-            © 2025 Aadarsh Shrivastav. All rights reserved.
+            &copy; 2026 Mairevh Exaucey. All rights reserved.
           </p>
         </div>
       </div>

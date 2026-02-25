@@ -1,11 +1,12 @@
 import React from "react";
 import { useTheme } from "../context/Theme/ThemeContext";
 import {
-  FaCode,
+  FaBrain,
   FaDatabase,
   FaPython,
-  FaGraduationCap,
-  FaShieldAlt,
+  FaChartLine,
+  FaRobot,
+  FaMicrochip,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -19,34 +20,34 @@ const Home = () => {
 
   const roles = [
     {
-      icon: FaCode,
-      title: "Full Stack Developer",
-      desc: "Building complete web solutions",
+      icon: FaBrain,
+      title: "AI Engineer",
+      desc: "Designing neural architectures & intelligent systems",
     },
     {
-      icon: FaDatabase,
-      title: "MERN Stack Developer",
-      desc: "MongoDB, Express, React, Node.js",
+      icon: FaRobot,
+      title: "NLP Expert",
+      desc: "Hybrid NLTK + LLM architectures",
     },
     {
-      icon: FaGraduationCap,
-      title: "DSA Problem Solver",
-      desc: "Solving complex algorithms",
+      icon: FaMicrochip,
+      title: "Computer Vision",
+      desc: "Image processing & OCR (YOLO)",
     },
     {
       icon: FaPython,
-      title: "AI/ML Enthusiast",
-      desc: "Exploring artificial intelligence",
+      title: "Backend Engineer",
+      desc: "Real-time APIs & WebSockets with FastAPI",
+    },
+    {
+      icon: FaChartLine,
+      title: "Data Engineering",
+      desc: "ETL pipelines with Prefect & PySpark",
     },
     {
       icon: FaDatabase,
-      title: "Data Science Enthusiast",
-      desc: "Analyzing and visualizing data",
-    },
-    {
-      icon: FaShieldAlt,
-      title: "Cybersecurity Enthusiast",
-      desc: "Securing systems and data",
+      title: "Cloud & MLOps",
+      desc: "AWS deployment & scalable ML pipelines",
     },
   ];
 
@@ -64,32 +65,22 @@ const Home = () => {
             >
               Hi, I'm{" "}
               <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
-                Aadarsh Shrivastav
+                Mairevh Exaucey
               </span>
             </h1>
 
             <p
               className={`text-lg sm:text-xl md:text-2xl font-semibold mb-6 ${textSecondary}`}
             >
-              Full Stack Developer | MERN Specialist
+              AI Engineer
             </p>
 
             <p
               className={`text-base sm:text-lg leading-relaxed mb-8 ${textPrimary}`}
             >
-              I'm a passionate{" "}
-              <span className="font-semibold">Full Stack Developer</span>{" "}
-              specializing in the{" "}
-              <span className="font-semibold">MERN Stack</span>. Beyond coding,
-              I create engaging content on{" "}
-              <span className="font-semibold">
-                YouTube @SkillCoder-By_Aadarsh
-              </span>
-              , explore <span className="font-semibold">AI/ML</span> and{" "}
-              <span className="font-semibold">Data Science</span>, and love
-              solving challenging{" "}
-              <span className="font-semibold">Data Structure & Algorithm</span>{" "}
-              problems.
+              Holding a <span className="font-semibold">Master's in AI & Big Data</span>, I am passionate about architecting intelligent systems.
+              I specialize in <span className="font-semibold">hybrid NLP</span>, <span className="font-semibold">financial anomaly detection</span>,
+              and deploying scalable solutions for digital transformation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -101,7 +92,7 @@ const Home = () => {
                       : "bg-blue-600 hover:bg-blue-700 text-white"
                   }`}
                 >
-                  View My Work
+                  View My Projects
                 </button>
               </Link>
 
@@ -126,8 +117,8 @@ const Home = () => {
               } shadow-2xl`}
             >
               <img
-                src="./pro.jpg"
-                alt="Aadarsh Shrivastav"
+                src="./pro.png"
+                alt="Mairevh Exaucey KIBAMBA MFOUTOU"
                 className="w-full h-full object-cover"
               />
             </div>

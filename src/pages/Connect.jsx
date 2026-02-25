@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Mail,
   Phone,
-  GraduationCap,
   Github,
   Linkedin,
-  Instagram,
   MessageCircle,
-  Twitter,
-  Facebook,
-  Youtube,
-  User,
+  Send,
+  MapPin,
 } from "lucide-react";
 import { useTheme } from "../context/Theme/ThemeContext";
 
@@ -18,209 +14,294 @@ const Connect = () => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
-  const contacts = [
-    {
-      icon: <Mail className="w-5 h-5" />,
-      label: "Email",
-      value: "aadarshshrivastav01@gmail.com",
-    },
-    {
-      icon: <Mail className="w-5 h-5" />,
-      label: "Alternate Email",
-      value: "adarshrivastav.4545@gmail.com",
-    },
-    {
-      icon: <Phone className="w-5 h-5" />,
-      label: "Phone",
-      value: "7620457148",
-    },
-    {
-      icon: <GraduationCap className="w-5 h-5" />,
-      label: "Education",
-      value: "B.Tech in Computer Engineering",
-    },
-  ];
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState(null);
+  const [sending, setSending] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    setStatus(null);
+
+    // mailto fallback - opens user's email client
+    const mailtoLink = `mailto:mairevhlfoutou@gmail.com?subject=${encodeURIComponent(
+      formData.subject || "Portfolio Contact"
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    )}`;
+    window.open(mailtoLink, "_blank");
+
+    setSending(false);
+    setStatus("success");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    setTimeout(() => setStatus(null), 5000);
+  };
 
   const socials = [
     {
       icon: <Github className="w-5 h-5" />,
       label: "GitHub",
-      link: "https://github.com/Aadarsh-max",
+      link: "https://github.com/bit-collab",
+      handle: "@bit-collab",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
-      link: "https://www.linkedin.com/in/aadarsh-shrivastav-686722325",
-    },
-    {
-      icon: <Instagram className="w-5 h-5" />,
-      label: "Instagram",
-      link: "https://instagram.com/hii_aadarshhh",
+      link: "https://www.linkedin.com/in/exaucey-kibamba-27261025b/",
+      handle: "Exaucey Kibamba",
     },
     {
       icon: <MessageCircle className="w-5 h-5" />,
       label: "WhatsApp",
-      link: "https://wa.me/7620457148",
-    },
-    {
-      icon: <Twitter className="w-5 h-5" />,
-      label: "X",
-      link: "https://x.com/aaddyshrivastav",
-    },
-    {
-      icon: <Facebook className="w-5 h-5" />,
-      label: "Facebook",
-      link: "https://www.facebook.com/share/196MZezWQY",
-    },
-    {
-      icon: <Youtube className="w-5 h-5" />,
-      label: "YouTube",
-      link: "https://www.youtube.com/@SkillCoder-By_Aadarsh",
+      link: "https://wa.me/79488526",
+      handle: "Chat with me",
     },
   ];
 
+  const inputClass = `w-full px-4 py-3 rounded-xl border transition-all duration-300 outline-none ${
+    isDark
+      ? "bg-blue-950/40 border-blue-900/40 text-white placeholder-gray-500 focus:border-blue-500 focus:bg-blue-950/60"
+      : "bg-white border-blue-200 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:bg-blue-50"
+  }`;
+
   return (
     <div
-      className={`min-h-screen flex items-center justify-center px-6 py-12 pt-24 transition-colors duration-500 ${
+      className={`min-h-screen px-4 sm:px-6 py-12 pt-24 transition-colors duration-500 ${
         isDark
           ? "bg-black text-gray-300"
           : "bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 text-gray-700"
       }`}
     >
-      <div
-        className={`max-w-4xl w-full rounded-3xl p-8 backdrop-blur-sm shadow-2xl border transition-all duration-500 ${
-          isDark
-            ? "bg-blue-950/40 border-blue-900/40"
-            : "bg-white/90 border-blue-100"
-        }`}
-      >
-        {/* Header Section */}
-        <div className="flex flex-col items-center mb-8">
-          <div className="relative mb-4">
-            <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 p-1">
-              <div
-                className={`w-full h-full rounded-2xl flex items-center justify-center overflow-hidden ${
-                  isDark ? "bg-black" : "bg-white"
-                }`}
-              >
-                <User className="w-16 h-16 text-blue-600" />
-                {/* Replace with actual image */}
-                <img
-                  src="./pro1.jpg"
-                  alt="Aadarsh Shrivastav"
-                  className="absolute inset-0 object-cover w-full h-full rounded-2xl opacity-90"
-                />
-              </div>
-            </div>
-          </div>
-
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
           <h1
-            className={`text-4xl font-bold mb-3 text-center leading-tight ${
-              isDark ? "text-gray-200" : "text-gray-800"
+            className={`text-4xl md:text-5xl font-bold mb-4 ${
+              isDark ? "text-white" : "text-gray-900"
             }`}
           >
-            Connect with{" "}
+            Get in{" "}
             <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
-              Aadarsh Shrivastav
+              Touch
             </span>
           </h1>
-
+          <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full mb-6"></div>
           <p
-            className={`text-lg font-medium ${
+            className={`text-lg max-w-xl mx-auto ${
               isDark ? "text-gray-400" : "text-gray-600"
             }`}
           >
-            Age: 19 Years
+            Have a project in mind or want to collaborate? I'd love to hear from you.
           </p>
         </div>
 
-        {/* Contact Info */}
-        <div className="grid gap-4 mb-8">
-          {contacts.map((item, i) => (
-            <div
-              key={i}
-              className={`flex items-center gap-4 rounded-xl px-5 py-4 transition-all duration-500 cursor-pointer border ${
-                isDark
-                  ? "bg-blue-950/40 border-blue-900/40 hover:bg-blue-950"
-                  : "bg-white/80 border-blue-100 hover:bg-blue-50"
-              } hover:-translate-y-1 hover:shadow-lg`}
-            >
-              <div className="text-blue-600">{item.icon}</div>
-              <div>
-                <p
-                  className={`text-sm font-medium ${
-                    isDark ? "text-gray-400" : "text-gray-500"
-                  }`}
-                >
-                  {item.label}
-                </p>
-                <p
-                  className={`font-semibold text-lg ${
-                    isDark ? "text-gray-200" : "text-gray-800"
-                  }`}
-                >
-                  {item.value}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Social Links */}
-        <h2
-          className={`text-2xl font-semibold mb-6 text-center ${
-            isDark ? "text-gray-200" : "text-gray-800"
-          }`}
-        >
-          Find Me On
-        </h2>
-
-        <div className="grid sm:grid-cols-2 gap-4">
-          {socials.map((social, i) => (
-            <a
-              key={i}
-              href={social.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-4 rounded-xl px-5 py-4 border transition-all duration-500 group hover:-translate-y-1 ${
-                isDark
-                  ? "bg-blue-950/40 border-blue-900/40 hover:bg-blue-950 hover:text-blue-400"
-                  : "bg-white/80 border-blue-100 hover:bg-blue-50 hover:text-blue-700"
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          {/* Contact Form - Takes 3 columns */}
+          <div
+            className={`lg:col-span-3 rounded-2xl p-8 border transition-all duration-500 ${
+              isDark
+                ? "bg-blue-950/40 border-blue-900/40"
+                : "bg-white/90 border-blue-100 shadow-xl"
+            }`}
+          >
+            <h2
+              className={`text-2xl font-bold mb-6 ${
+                isDark ? "text-white" : "text-gray-900"
               }`}
             >
-              <div className="group-hover:scale-125 transition-transform duration-300">
-                {social.icon}
+              Send a Message
+            </h2>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your Name"
+                  required
+                  className={inputClass}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your Email"
+                  required
+                  className={inputClass}
+                />
               </div>
-              <span className="font-medium">{social.label}</span>
-            </a>
-          ))}
-        </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-          <a
-            href="mailto:aadarshshrivastav01@gmail.com"
-            className={`px-8 py-4 rounded-xl font-semibold shadow-lg transition-all duration-500 text-center ${
-              isDark
-                ? "bg-blue-900 text-white hover:scale-110"
-                : "bg-blue-100 text-blue-600 hover:bg-blue-200 hover:scale-110"
-            }`}
-          >
-            <Mail className="inline w-5 h-5 mr-2" />
-            Send Email
-          </a>
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Subject"
+                className={inputClass}
+              />
 
-          <a
-            href="https://wa.me/7620457148"
-            className={`px-8 py-4 rounded-xl border-2 font-semibold transition-all duration-500 text-center ${
-              isDark
-                ? "border-blue-900 text-blue-400 hover:bg-green-600 hover:text-white hover:border-green-600"
-                : "border-blue-600 text-blue-600 hover:bg-green-500 hover:text-white hover:border-green-500"
-            }`}
-          >
-            <MessageCircle className="inline w-5 h-5 mr-2" />
-            Chat on WhatsApp
-          </a>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your message..."
+                required
+                rows={6}
+                className={`${inputClass} resize-none`}
+              />
+
+              <button
+                type="submit"
+                disabled={sending}
+                className={`w-full sm:w-auto px-8 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${
+                  isDark
+                    ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-600/30"
+                    : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-600/20"
+                } disabled:opacity-60`}
+              >
+                <Send className="w-4 h-4" />
+                {sending ? "Sending..." : "Send Message"}
+              </button>
+
+              {status === "success" && (
+                <p className="text-green-500 font-medium mt-2">
+                  Your email client has been opened. Send the message to complete!
+                </p>
+              )}
+            </form>
+          </div>
+
+          {/* Contact Info - Takes 2 columns */}
+          <div className="lg:col-span-2 flex flex-col gap-6">
+            {/* Quick Contact */}
+            <div
+              className={`rounded-2xl p-6 border transition-all duration-500 ${
+                isDark
+                  ? "bg-blue-950/40 border-blue-900/40"
+                  : "bg-white/90 border-blue-100 shadow-xl"
+              }`}
+            >
+              <h2
+                className={`text-xl font-bold mb-5 ${
+                  isDark ? "text-white" : "text-gray-900"
+                }`}
+              >
+                Contact Info
+              </h2>
+
+              <div className="space-y-4">
+                <a
+                  href="mailto:mairevhlfoutou@gmail.com"
+                  className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
+                    isDark ? "hover:bg-blue-950" : "hover:bg-blue-50"
+                  }`}
+                >
+                  <div className="p-2 rounded-lg bg-blue-600 text-white">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className={`text-xs ${isDark ? "text-gray-500" : "text-gray-400"}`}>Email</p>
+                    <p className={`text-sm font-medium ${isDark ? "text-gray-200" : "text-gray-800"}`}>
+                      mairevhlfoutou@gmail.com
+                    </p>
+                  </div>
+                </a>
+
+                <a
+                  href="https://wa.me/79488526"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
+                    isDark ? "hover:bg-blue-950" : "hover:bg-blue-50"
+                  }`}
+                >
+                  <div className="p-2 rounded-lg bg-blue-600 text-white">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className={`text-xs ${isDark ? "text-gray-500" : "text-gray-400"}`}>Phone</p>
+                    <p className={`text-sm font-medium ${isDark ? "text-gray-200" : "text-gray-800"}`}>
+                      +228 79 48 85 26
+                    </p>
+                  </div>
+                </a>
+
+                <div
+                  className={`flex items-center gap-3 p-3 rounded-xl ${
+                    isDark ? "" : ""
+                  }`}
+                >
+                  <div className="p-2 rounded-lg bg-blue-600 text-white">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className={`text-xs ${isDark ? "text-gray-500" : "text-gray-400"}`}>Location</p>
+                    <p className={`text-sm font-medium ${isDark ? "text-gray-200" : "text-gray-800"}`}>
+                      Lome, Togo
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div
+              className={`rounded-2xl p-6 border transition-all duration-500 ${
+                isDark
+                  ? "bg-blue-950/40 border-blue-900/40"
+                  : "bg-white/90 border-blue-100 shadow-xl"
+              }`}
+            >
+              <h2
+                className={`text-xl font-bold mb-5 ${
+                  isDark ? "text-white" : "text-gray-900"
+                }`}
+              >
+                Find Me Online
+              </h2>
+
+              <div className="space-y-3">
+                {socials.map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-3 p-3 rounded-xl border transition-all duration-300 group hover:-translate-y-0.5 ${
+                      isDark
+                        ? "border-blue-900/40 hover:bg-blue-950 hover:border-blue-700"
+                        : "border-blue-100 hover:bg-blue-50 hover:border-blue-300"
+                    }`}
+                  >
+                    <div className="p-2 rounded-lg bg-blue-600 text-white group-hover:scale-110 transition-transform duration-300">
+                      {social.icon}
+                    </div>
+                    <div>
+                      <p className={`text-sm font-semibold ${isDark ? "text-gray-200" : "text-gray-800"}`}>
+                        {social.label}
+                      </p>
+                      <p className={`text-xs ${isDark ? "text-gray-500" : "text-gray-400"}`}>
+                        {social.handle}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

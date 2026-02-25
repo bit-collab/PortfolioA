@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTheme } from "../context/Theme/ThemeContext";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaRobot, FaDatabase, FaMicrochip, FaChartBar } from "react-icons/fa";
 
 const Work = () => {
   const { theme } = useTheme();
@@ -17,68 +17,46 @@ const Work = () => {
 
   const projects = [
     {
-      title: "QuickScribe",
-      desc: "QuickScribe — Intelligent MERN Note-Taking App to create, manage, and organize notes with search, filtering, tags, and pinning. Built with the MERN stack.",
-      img: "./quick.png",
-      live: "https://notes-frontend-alpha-beryl.vercel.app",
-      git: "https://github.com/Aadarsh-max/QuickScribe",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-    },
-    {
-      title: "SnipScan",
-      desc: "SnipScan — A responsive URL Shortener app built with MERN, enabling users to create short links and QR codes for easy sharing and scanning.",
-      img: "./url.png",
-      live: "https://url-shortner-frontend-phi.vercel.app",
-      git: "https://github.com/Aadarsh-max/SnipScan",
-      tech: ["React", "Node.js", "MongoDB", "QR Code"],
-    },
-    {
-      title: "PrepMateAI",
-      desc: "PrepMateAI — AI-powered interview prep tool using Google's Gemini AI. Get tailored technical questions, code snippets, and saved sessions.",
-      img: "./ai.png",
-      live: "https://prepmate-ai-nine.vercel.app",
-      git: "https://github.com/Aadarsh-max/PrepMateAI",
-      tech: ["React", "Gemini AI", "Node.js", "MongoDB"],
-    },
-    {
-      title: "Expense Tracker",
-      desc: "Expense Tracker — Smart MERN app for managing income & expenses with charts and dashboards for financial insights.",
-      img: "./expense.png",
-      live: "https://expense-tracker-gamma-dun.vercel.app",
-      git: "https://github.com/Aadarsh-max/Expense-Tracker",
-      tech: ["React", "Charts.js", "MongoDB", "Node.js"],
-    },
-    {
-      title: "Streamify",
-      desc: "Streamify — A MERN-based app for connecting, chatting, and collaborating with people globally through text and video communication.",
+      title: "Intelligent Customer Support",
+      desc: "Three-tier intelligent backend for a fintech. Hybrid NLP system (NLTK + Groq) with real-time chat management via WebSockets and operator load balancing.",
       img: "./streamify.png",
-      live: "https://streamify-app-47nz.onrender.com",
-      git: "https://github.com/Aadarsh-max/Streamify",
-      tech: ["React", "WebRTC", "Socket.io", "Node.js"],
+      tech: ["FastAPI", "WebSockets", "NLTK", "LLM", "PostgreSQL"],
+      icon: <FaRobot />,
     },
     {
-      title: "Resume Builder",
-      desc: "Resume Builder — A MERN app that helps users create professional resumes with multiple templates and export as PDF.",
-      img: "./resume.png",
-      live: "https://resume-three-cyan.vercel.app",
-      git: "https://github.com/Aadarsh-max/Resume-Builder",
-      tech: ["React", "PDF.js", "MongoDB", "Node.js"],
+      title: "Financial Anomaly Detection",
+      desc: "Suspicious transaction detection model achieving 98% precision. Automated ETL pipeline and algorithm comparison (Isolation Forest, Transformers, SVM).",
+      img: "./expense.png",
+      tech: ["PySpark", "Prefect", "Scikit-learn", "AWS"],
+      icon: <FaChartBar />,
     },
     {
-      title: "Microsys Computers",
-      desc: "Microsys Computers — My first earning project, a professional business website built with modern web technologies.",
+      title: "GovTech Innovation (World Bank)",
+      desc: "AI architecture for informal taxpayer digitalization (Ghana Revenue Authority). Large-scale scoring and classification solution.",
+      img: "./ai.png",
+      tech: ["Machine Learning", "Data Architecture", "Scoring"],
+      icon: <FaDatabase />,
+    },
+    {
+      title: "e-ID Card Processing",
+      desc: "Complete processing pipeline for Togolese identity documents. Object detection via YOLO and data extraction through OCR on large datasets.",
+      img: "./url.png",
+      tech: ["YOLO", "OCR", "OpenCV", "Python"],
+      icon: <FaMicrochip />,
+    },
+    {
+      title: "Intelligent Voice Assistant",
+      desc: "Voice chatbot design with human escalation. Whisper integration for transcription and speech synthesis engines for inclusion.",
+      img: "./quick.png",
+      tech: ["Whisper", "NLP", "Python", "REST API"],
+      icon: <FaRobot />,
+    },
+    {
+      title: "Proactive Reminder System",
+      desc: "Analysis of 300,000+ transaction history to identify recurring payments and generate automated intelligent reminders.",
       img: "./microsys.png",
-      live: "https://microsys-computers.vercel.app",
-      git: "https://github.com/Aadarsh-max/Microsys-Computers",
-      tech: ["React", "Tailwind", "Node.js", "MongoDB"],
-    },
-    {
-      title: "My Portfolio",
-      desc: "My Portfolio — A personal website showcasing my skills, projects, and journey as a developer with smooth animations and dark/light mode.",
-      img: "./myport.png",
-      live: "https://my-portfolio-omega-tawny-21.vercel.app",
-      git: "https://github.com/Aadarsh-max/My-Portfolio",
-      tech: ["React", "Framer Motion", "Tailwind", "Next.js"],
+      tech: ["DBSCAN", "Clustering", "Python", "Data Analysis"],
+      icon: <FaChartBar />,
     },
   ];
 
@@ -107,6 +85,9 @@ const Work = () => {
             </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
+          <p className={`mt-4 text-lg ${textPrimary} max-w-2xl mx-auto`}>
+            A selection of my work in AI, Data Engineering, and intelligent systems architecture.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -121,7 +102,7 @@ const Work = () => {
                   : "hover:-translate-y-2"
               } ${cardBg} group relative`}
             >
-              <div className="relative h-56 overflow-hidden bg-gradient-to-b from-blue-500/10 to-transparent">
+              <div className="relative h-56 overflow-hidden bg-gradient-to-b from-blue-500/10 to-transparent flex items-center justify-center">
                 <img
                   src={project.img}
                   alt={project.title}
@@ -129,6 +110,9 @@ const Work = () => {
                     hoveredIndex === index ? "scale-110" : "scale-100"
                   }`}
                 />
+                <div className="absolute top-4 left-4 bg-blue-600 text-white p-3 rounded-xl shadow-lg z-20">
+                  {project.icon}
+                </div>
                 <div
                   className={`absolute inset-0 transition-opacity duration-500 ${
                     hoveredIndex === index
@@ -168,34 +152,16 @@ const Work = () => {
                 </div>
 
                 <div className="flex gap-3 mt-4">
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 transform ${
-                      hoveredIndex === index ? "scale-105" : "scale-100"
-                    } ${
+                  <button
+                    disabled
+                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-semibold opacity-80 cursor-default ${
                       isDark
-                        ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-600/50"
-                        : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-600/30"
+                        ? "bg-blue-900/40 text-blue-400"
+                        : "bg-blue-100 text-blue-600"
                     }`}
                   >
-                    <FaExternalLinkAlt className="text-sm" /> Live
-                  </a>
-                  <a
-                    href={project.git}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-semibold border-2 transition-all duration-300 transform ${
-                      hoveredIndex === index ? "scale-105" : "scale-100"
-                    } ${
-                      isDark
-                        ? "border-blue-400 text-blue-400 hover:bg-blue-950/50 hover:border-blue-300"
-                        : "border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700"
-                    }`}
-                  >
-                    <FaGithub className="text-sm" /> GitHub
-                  </a>
+                    Proprietary / Confidential
+                  </button>
                 </div>
               </div>
             </div>
